@@ -1,0 +1,3 @@
+---
+- name: nada
+  shell: "echo hi"

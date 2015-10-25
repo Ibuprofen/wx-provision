@@ -1,0 +1,6 @@
+- name: PostgreSQL and configure the databases
+  hosts: dbservers
+  remote_user: root
+
+  roles:
+    - db

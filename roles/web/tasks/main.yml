@@ -1,0 +1,19 @@
+---
+- name: Add nodesource signing key
+  shell: "curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -"
+
+- name: Creating apt sources list file for the NodeSource Node.js
+  shell: "echo 'deb https://deb.nodesource.com/node_4.x {{ ubuntu_version_name }} main' > /etc/apt/sources.list.d/nodesource.list"
+
+- name: Creating apt sources list file for the NodeSource Node.js
+  shell: "echo 'deb-src https://deb.nodesource.com/node_4.x {{ ubuntu_version_name }} main' >> /etc/apt/sources.list.d/nodesource.list"
+
+- name: Add dotdeb repos
+  shell: "apt-get update"
+
+- name: Install nodejs
+  apt: pkg=nodejs state=latest update_cache=yes
+
+- name : Install forever
+  shell: npm install forever -g
+

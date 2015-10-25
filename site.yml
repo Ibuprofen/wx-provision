@@ -1,0 +1,13 @@
+---
+# Comment
+- name: Apply base packages
+  hosts:
+    - webservers
+    - dbservers
+  remote_user: root
+
+  roles:
+    - base
+
+- include: db.yml
+- include: web.yml

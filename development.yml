@@ -1,0 +1,15 @@
+---
+# Comment
+- name: Development
+  hosts:
+    - webservers
+    - dbservers
+  remote_user: root
+
+  tasks:
+
+  - name: say hi
+    shell: echo "hi..."
+
+- include: site.yml
+
